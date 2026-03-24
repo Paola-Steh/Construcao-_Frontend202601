@@ -75,6 +75,7 @@ header > img {
     width: 32px;
 }
 
+/* desktop 
 @media (width >= 768px) {
   body {
     display: flex;
