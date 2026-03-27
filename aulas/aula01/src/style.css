@@ -46,14 +46,33 @@ main > input[type=number], input[type=password] {
 
 main > button {
   background-color: var(--cor-primaria);
-  border: none;
-  border-radius: 0.5rem;
-  color: white;
-  padding: 0.75rem;
 }
 
-/* responsividade para desktop*/
-@media (min-width: 768px) {
+header {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0.5rem;
+  background-color: var(--cor-secundaria);
+}
+
+header > h1 {
+   margin: 0;    
+}
+
+header > img {
+    height: 32px;
+    width: 32px;
+}
+
+/* desktop 
+@media (width >= 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
   main {
     max-width: 400px;
     margin: 3rem auto;
