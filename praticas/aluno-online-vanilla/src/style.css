@@ -60,6 +60,11 @@ header {
 
 aside {
   display: none;
+  width: 240px;
+  background-color: #dcdcdc;
+  min-height: 100vh;
+
+  padding: 24px 16px; /* substitui o padding global */
 }
 
 nav h2 {
