@@ -1,3 +1,5 @@
+/*  Daqui pra baixo pertence a pág index.html  */
+
 * {
   margin: 0;
   padding: 1rem;
@@ -75,12 +77,87 @@ nav h2 {
   text-align: left;
 }
 
-/* desktop */
+
+/* daqui para baixo pertence á pág login.html  */ 
+.login-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  align-items: center;
+}
+
+.login-page main {   /* tudo do card parece  (FALTA DEIXAR ISSO ARRUMADO PRA MOBILE ) */
+  display: flex;
+  flex-direction: column;
+
+  width: 90%;
+  max-width: 400px;
+
+  margin: auto;
+
+  padding: 1.5rem;
+
+  background-color: white;
+
+  flex: unset;
+}
+
+.login-page main img {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.login-page main > h1 { 
+  text-align: center;
+  margin-bottom: 0rem;
+  font-size: 1.5rem;
+}
+
+.login-page main > input[type=number],
+.login-page main > input[type=password] {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #303030;
+  margin-bottom: -2rem;
+}
+
+
+.login-page button {
+  background-color: #dcdcdc;
+  border: none;
+  border-radius: 0.5rem;
+  color: #303030;
+  border: 1px solid gray;
+
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+.login-page label {
+  padding: 0;
+  margin-top: -2rem;
+}
+
+.login-page footer { /* FOOTER */
+  margin-top: auto;
+  padding-bottom: 1rem;
+  font-size: 14px;
+  margin-bottom: 1rem;
+}
+
+/* mobile para cima */      /*  Tudo que tiver fora do @media é mobile  */
+
+
+/* desktop para baixo */    /*  Tudo que tiver dentro do @media é para Desktop  */
+
 @media (width >= 768px) {
   aside {
     display: block;
   }
-}
+
 
 /* Daqui pra baixo é o Login, eu acho */
 /*
@@ -165,5 +242,5 @@ nav h2 {
   font-size: 14px;
   margin-bottom: 1rem;
 }
-
+}
 /*  NÃO SEI COMO COLOCAR A RESPONSIVIDADE PARA O LOGIN  */
