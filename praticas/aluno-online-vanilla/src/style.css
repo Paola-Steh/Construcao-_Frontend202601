@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-:root {              /*  ESSE ROOT SERVE PRA TUDO*/
+:root {              /*  ESSE ROOT SERVE PRA TUDO */
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 400;
   line-height: 1.5;
@@ -69,7 +69,6 @@ aside {
   width: 240px;
   background-color: #dcdcdc;
   min-height: 100vh;
-
   padding: 24px 16px; /* substitui o padding global */
 }
 
@@ -83,23 +82,17 @@ nav h2 {
   display: flex;
   flex-direction: column;
   height: 100vh;
-
   align-items: center;
 }
 
 .login-page main {   /* tudo do card parece  (FALTA DEIXAR ISSO ARRUMADO PRA MOBILE ) */
   display: flex;
   flex-direction: column;
-
   width: 90%;
   max-width: 400px;
-
   margin: auto;
-
   padding: 1.5rem;
-
   background-color: white;
-
   flex: unset;
 }
 
@@ -112,12 +105,12 @@ nav h2 {
 
 .login-page main > h1 { 
   text-align: center;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
   font-size: 1.5rem;
 }
 
-.login-page main > input[type=number],
-.login-page main > input[type=password] {
+.login-page main > input[type="number"],
+.login-page main > input[type="password"] {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid #303030;
@@ -127,11 +120,9 @@ nav h2 {
 
 .login-page button {
   background-color: #dcdcdc;
-  border: none;
   border-radius: 0.5rem;
   color: #303030;
   border: 1px solid gray;
-
   padding: 0.5rem;
   margin-top: 1rem;
   cursor: pointer;
@@ -139,7 +130,7 @@ nav h2 {
 
 .login-page label {
   padding: 0;
-  margin-top: 0rem;
+  margin-top: 0;
 }
 
 .login-page footer { /* FOOTER */
@@ -149,10 +140,14 @@ nav h2 {
   margin-bottom: 1rem;
 }
 
-/* mobile para cima */      /*  Tudo que tiver fora do @media é mobile  */
+/* mobile para cima */
+
+      /*  Tudo que tiver fora do @media é mobile  */
 
 
-/* desktop para baixo */    /*  Tudo que tiver dentro do @media é para Desktop  */
+/* desktop para baixo */
+
+    /*  Tudo que tiver dentro do @media é para Desktop  */
 
 @media (width >= 768px) {
   aside {
@@ -161,6 +156,7 @@ nav h2 {
 
 
 /* Daqui pra baixo é o Login, eu acho */
+
 /*
 
 .login-page {
@@ -175,7 +171,6 @@ nav h2 {
   display: flex;
   flex-direction: column;
   height: 100vh;
-
   align-items: center;
 }
 
@@ -183,19 +178,13 @@ nav h2 {
 .login-page main {   /* tudo do card parece  (FALTA DEIXAR ISSO ARRUMADO PRA MOBILE ) */
   display: flex;
   flex-direction: column;
-
   width: 90%;
   max-width: 400px;
-
   margin: auto;
-
   border: 1px solid #303030;
   border-radius: 8px;
-
   padding: 1.5rem;
-
   background-color: white;
-
   flex: unset;
 }
 
@@ -212,21 +201,19 @@ nav h2 {
   font-size: 2.5rem;
 }
 
-.login-page main > input[type=number],
-.login-page main > input[type=password] {
+.login-page main > input[type="number"],
+.login-page main > input[type="password"] {
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid #303030;
-  margin-bottom: 0rem;
+  margin-bottom: 0;
 }
 
 .login-page button {
   background-color: #dcdcdc;
-  border: none;
   border-radius: 0.5rem;
   color: #303030;
   border: 1px solid gray;
-
   padding: 0.5rem;
   margin-top: 1rem;
   cursor: pointer;
@@ -238,13 +225,13 @@ nav h2 {
 }
 
 .login-page footer { /* FOOTER */
-  margin-top: center;
+  margin-top: auto;
   padding-bottom: 1rem;
   font-size: 14px;
   margin-bottom: 1rem;
-
   position: relative;
   z-index: 0;
 }
 }
+
 /*  NÃO SEI COMO COLOCAR A RESPONSIVIDADE PARA O LOGIN  */
