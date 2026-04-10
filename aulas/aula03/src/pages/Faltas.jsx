@@ -1,18 +1,17 @@
 
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import Tabela from "../components/Tabela";
+
 
 function Faltas() {
-    return <>
-        <Sidebar />
-        <main>
-            <Topbar />
-            <h2>Minhas Faltas</h2>
-            <section>
+    return <Layout 
+  titulo="Minhas Faltas" 
+  subtitulo="Histórico de Faltas por Semestre"
+  >
+    <Tabela />
+    <Tabela />
+    <Tabela />
 
-            </section>
-        </main>
-    </>
+  </Layout>;
 }
 
 export default Faltas;

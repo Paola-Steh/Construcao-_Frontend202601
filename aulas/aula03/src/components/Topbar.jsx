@@ -1,10 +1,10 @@
 
 import avatar from "../assets/avatar.svg";
 
-function Topbar() {
+function Topbar(props) {
     return <>
         <header>
-            <h1>Olá, Aluno!</h1>
+            <h1>{props.titulo}Olá, Aluno!</h1>
             <img src={avatar} alt="Imagem do Avatar" />
         </header>
     </>

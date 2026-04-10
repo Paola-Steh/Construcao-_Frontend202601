@@ -12,4 +12,4 @@ createRoot(document.getElementById('root')).render(
 )
 
 // document.getElementById('root') > PROCURANDO UM ELEMENTO LÁ NO INDEX //
-// Aí eloe vai rodar o app.js > e lá tem a div //
+// Aí ele vai rodar o app.js > e lá tem a div //

@@ -1,20 +1,20 @@
 
-
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import Tabela from "../components/Tabela";
 
 function Requerimentos() {
-    return <>
-        <Sidebar />
-        <main>
-            <Topbar />
-            <h2>Meus Requerimentos</h2>
-            <section>
+    return <Layout 
+  titulo="Meus Requerimentos" 
+  subtitulo="Faça solicitações online para a secretaria"
+  >
+    <Tabela />
+    <Tabela />
+    <Tabela />
 
-            </section>
-        </main>
-    </>
+  </Layout>;
 }
+
+/* Essa parte de cima é um componente, o Layout da página. 
+Se percebe que tem esse corpo da função em todas  */
 
 export default Requerimentos;
 
