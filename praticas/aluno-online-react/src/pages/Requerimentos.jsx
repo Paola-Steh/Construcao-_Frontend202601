@@ -1,6 +1,7 @@
 
 
 import Sidebar from "../components/Sidebar";
+import Tabela from "../components/Tabela";
 import Topbar from "../components/Topbar";
 
 function Requerimentos() {
@@ -10,7 +11,8 @@ function Requerimentos() {
             <Topbar />
             <h2>Meus Requerimentos</h2>
             <section>
-
+                <Tabela />
+                <Tabela />
             </section>
         </main>
     </>

@@ -1,5 +1,6 @@
 
 import Sidebar from "../components/Sidebar";
+import Tabela from "../components/Tabela";
 import Topbar from "../components/Topbar";
 
 function Boletos() {
@@ -9,7 +10,8 @@ function Boletos() {
             <Topbar />
             <h2>Meus Boletos</h2>
             <section>
-
+                <Tabela />
+                <Tabela />
             </section>
         </main>
     </>
