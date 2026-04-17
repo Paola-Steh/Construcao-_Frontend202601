@@ -1,15 +1,20 @@
-import "./Card.css"
+import "./Card.css";
 
 function Card() {
   return (
-    <article>
-      <h3>Card único - Título</h3>
-      <ul>
-        <li>Informação igual</li>
-        <li></li>
-        <li></li>
-      </ul>
-    </article>  
+    <article className="card">
+      <div className="card-header">
+        <h2>Card único - Título</h2>
+      </div>
+
+      <div className="card-content">
+        <ul>
+          <li>Informação igual</li>
+          <li>Informação adicional</li>
+          <li>Mais detalhes</li>
+        </ul>
+      </div>
+    </article>
   );
 }
 
