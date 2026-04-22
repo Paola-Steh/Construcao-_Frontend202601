@@ -1,3 +1,5 @@
+/* TOPBAR */
+
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -5,12 +7,15 @@
   padding: 1rem 2rem;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .user-greeting span {
   font-size: 1.1rem;
   font-weight: 500;
   display: block;
+  color: #303030;
 }
 
 .welcome-message {
@@ -26,8 +31,35 @@
   object-fit: cover;
 }
 
+/* MOBILE */
 @media (max-width: 767px) {
+  .topbar {
+    padding: 0.75rem 1rem;
+  }
+
   .user-greeting span {
+    font-size: 1rem;
     margin-bottom: 0.25rem;
+  }
+
+  .welcome-message {
+    font-size: 0.8rem;
+  }
+
+  .user-avatar img {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .topbar {
+    padding: 1rem 2rem;
+  }
+
+  .user-avatar img {
+    width: 40px;
+    height: 40px;
   }
 }

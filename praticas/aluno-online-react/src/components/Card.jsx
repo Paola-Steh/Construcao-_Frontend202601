@@ -3,9 +3,9 @@ import "./Card.css";
 function Card() {
   return (
     <article className="card">
-      <div className="card-header">
+      <header className="card-header">
         <h2>Card único - Título</h2>
-      </div>
+      </header>
 
       <div className="card-content">
         <ul>

@@ -1,11 +1,13 @@
-/*  CSS CARD  */
+/* CSS CARD */
 
 .card {
+  width: 100%;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 1.5rem;
+  box-sizing: border-box;
 }
 
 .card-header {
@@ -17,7 +19,7 @@
 .card-header h2 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #303030;
+  color: #fff;
   margin: 0;
 }
 
@@ -34,8 +36,48 @@
 .card-content li {
   padding: 0.5rem 0;
   border-bottom: 1px solid #eee;
+  line-height: 1.5;
+  color: #303030;
 }
 
 .card-content li:last-child {
   border-bottom: none;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .card {
+    margin-bottom: 1rem;
+  }
+
+  .card-header {
+    padding: 0.75rem;
+  }
+
+  .card-header h2 {
+    font-size: 1rem;
+  }
+
+  .card-content {
+    padding: 0.75rem;
+  }
+
+  .card-content li {
+    font-size: 0.95rem;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .card {
+    margin-bottom: 1.5rem;
+  }
+
+  .card-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .card-content {
+    padding: 1rem;
+  }
 }
