@@ -1,0 +1,48 @@
+/* SIDEBAR */
+
+.sidebar {
+  width: 250px;
+  background-color: #fff;
+  border-right: 1px solid #ddd;
+  padding: 1.5rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  flex-shrink: 0; /* impede de encolher no flex */
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.sidebar-logo {
+  width: 32px;
+  height: 32px;
+}
+
+.sidebar-header h1 {
+  font-size: 1.25rem;
+  color: #303030;
+  margin: 0;
+}
+
+.sidebar-nav {
+  width: 100%;
+}
+
+/* MOBILE */
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .sidebar {
+    width: 280px;
+    display: block;
+  }
+}
