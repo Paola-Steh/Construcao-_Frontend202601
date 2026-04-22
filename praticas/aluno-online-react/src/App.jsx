@@ -1,26 +1,22 @@
-
-import Dashboard from './pages/Dashboard';
-import Notas from './pages/Notas';
-import Faltas from './pages/Faltas';
-import Boletos from './pages/Boletos';
-import Requerimentos from './pages/Requerimentos';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Dashboard from './pages/Dashboard'
+import Faltas from './pages/Faltas'
+import Notas from './pages/Notas'
+import Boletos from './pages/Boletos'
+import Requerimentos from './pages/Requerimentos'
 
 function App() {
-  const pagina = 4;
-  
-  // switch ... case ...   (tbm poderia ser feito)
-
-  // se a condição for verdadeira (pagina == 1 &&), ele faz a segunda (<Dashboard />)
-
   return (
-    <>
-      {pagina == 1 && <Dashboard />}  
-      {pagina == 2 && <Notas />}
-      {pagina == 3 && <Faltas />}
-      {pagina == 4 && <Boletos />}
-      {pagina == 5 && <Requerimentos />}
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/faltas" element={<Faltas />} />
+        <Route path="/notas" element={<Notas />} />
+        <Route path="/boletos" element={<Boletos />} />
+        <Route path="/requerimentos" element={<Requerimentos />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App;
+export default App
