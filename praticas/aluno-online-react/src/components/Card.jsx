@@ -1,21 +1,18 @@
-import "./Card.css";
+import './Card.css'
 
-function Card() {
+function Card({ title, children, className = '' }) {
   return (
-    <article className="card">
-      <header className="card-header">
-        <h2>Card único - Título</h2>
-      </header>
-
-      <div className="card-content">
-        <ul>
-          <li>Informação igual</li>
-          <li>Informação adicional</li>
-          <li>Mais detalhes</li>
-        </ul>
-      </div>
+    <article className={`card ${className}`}>
+      {title && (
+        <header className="card-header">
+          <h2>{title}</h2>
+        </header>
+      )}
+      <section className="card-content">
+        {children}
+      </section>
     </article>
-  );
+  )
 }
 
 export default Card;

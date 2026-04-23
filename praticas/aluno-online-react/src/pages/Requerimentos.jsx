@@ -1,60 +1,22 @@
-import "./Requerimentos.css";
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import Layout from '../components/Layout'
+import Tabela from '../components/Tabela'
 
 function Requerimentos() {
+  const requerimentos = [
+    { tipo: 'Revisão de Menção', data: '15/12/2025', situacao: 'Indeferido' },
+    { tipo: 'Dispensa de Disciplina', data: '12/06/2025', situacao: 'Indeferido' },
+    { tipo: 'Trancamento de Matrícula', data: '05/01/2024', situacao: 'Deferido' },
+    { tipo: 'Mudança de Turno', data: '10/10/2023', situacao: 'Deferido' },
+    { tipo: 'Renovação de Matrícula', data: '20/02/2023', situacao: 'Deferido' }
+  ]
+
+  const colunas = ['Tipo de Requerimento', 'Data de Solicitação', 'Situação']
+
   return (
-    <div className="app-container">
-      <Sidebar />
-
-      <main className="main-content requerimentos-container">
-        <Topbar />
-
-        <header className="requerimentos-header">
-          <h1>Aluno Online</h1>
-          <h2>Meus Requerimentos</h2>
-        </header>
-
-        <section className="requerimentos-card">
-          <table className="requerimentos-table">
-            <thead>
-              <tr>
-                <th>Requerimento</th>
-                <th>Data</th>
-                <th>Situação</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <tr>
-                <td>Declaração de matrícula</td>
-                <td>10/03/2026</td>
-                <td>
-                  <span className="situacao-badge deferido">Deferido</span>
-                </td>
-              </tr>
-
-              <tr>
-                <td>Revisão de nota</td>
-                <td>22/03/2026</td>
-                <td>
-                  <span className="situacao-badge indeferido">Indeferido</span>
-                </td>
-              </tr>
-
-              <tr>
-                <td>Trancamento de disciplina</td>
-                <td>05/04/2026</td>
-                <td>
-                  <span className="situacao-badge deferido">Deferido</span>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-      </main>
-    </div>
-  );
+    <Layout titulo="Meus Requerimentos" subtitulo="Faça solicitações online para a secretaria">
+      <Tabela colunas={colunas} dados={requerimentos} />
+    </Layout>
+  )
 }
 
 export default Requerimentos;

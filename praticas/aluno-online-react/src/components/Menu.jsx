@@ -1,16 +1,18 @@
-import "./Menu.css";
+import './Menu.css'
 
 function Menu() {
   return (
-    <ul className="menu">
-      <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Notas</a></li>
-      <li><a href="#">Faltas</a></li>
-      <li><a href="#">Boletos</a></li>
-      <li><a href="#">Requerimentos</a></li>
-      <li><a href="#">Sair</a></li>
-    </ul>
-  );
+    <nav className="menu">
+      <ul>
+        <li><a href="/">Dashboard</a></li>
+        <li><a href="/notas">Notas</a></li>
+        <li><a href="/faltas">Faltas</a></li>
+        <li><a href="/boletos">Boletos</a></li>
+        <li><a href="/requerimentos">Requerimentos</a></li>
+        <li><a href="/login">Sair</a></li>
+      </ul>
+    </nav>
+  )
 }
 
 export default Menu;

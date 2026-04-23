@@ -1,16 +1,8 @@
-/* ===== CONTAINER ===== */
-
-.dashboard-container {
+.boletos-container {
   width: 100%;
-  flex: 1;
-  background-color: #f5f5f5;
-  box-sizing: border-box;
 }
 
-/* ===== HEADER ===== */
-
 .boletos-header {
-  padding: 1.5rem 2rem 0;
   margin-bottom: 1.5rem;
 }
 
@@ -27,16 +19,12 @@
   color: #303030;
 }
 
-/* ===== CARD ===== */
-
 .boletos-card {
-  width: calc(100% - 4rem);
-  margin: 0 2rem 1.5rem;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  box-sizing: border-box;
+  margin-bottom: 1.5rem;
 }
 
 .boletos-card-header {
@@ -51,8 +39,6 @@
   color: #303030;
   margin: 0;
 }
-
-/* ===== TABELA ===== */
 
 .boletos-table {
   width: 100%;
@@ -81,8 +67,6 @@
   border-bottom: none;
 }
 
-/* ===== BADGES ===== */
-
 .situacao-badge {
   font-weight: 600;
   padding: 0.25rem 0.75rem;
@@ -106,13 +90,7 @@
   background-color: #f5f5f5;
 }
 
-/* ===== MOBILE ===== */
-
 @media (max-width: 640px) {
-  .boletos-header {
-    padding: 1rem;
-  }
-
   .boletos-header h1 {
     font-size: 1.5rem;
   }
@@ -121,23 +99,9 @@
     font-size: 1.1rem;
   }
 
-  .boletos-card {
-    width: calc(100% - 2rem);
-    margin: 0 1rem 1rem;
-  }
-
   .boletos-table th,
   .boletos-table td {
     padding: 0.5rem;
     font-size: 0.9rem;
-  }
-}
-
-/* ===== DESKTOP ===== */
-
-@media (min-width: 768px) {
-  .boletos-card {
-    width: calc(100% - 4rem);
-    margin: 0 2rem 1.5rem;
   }
 }
