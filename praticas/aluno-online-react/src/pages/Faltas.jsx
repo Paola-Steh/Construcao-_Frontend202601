@@ -1,94 +1,33 @@
-import "./Faltas.css";
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import Layout from '../components/Layout'
+import Tabela from '../components/Tabela'
 
 function Faltas() {
+  const semestre20261 = [
+    { disciplina: 'BI e Data Warehousing', faltas: 0, presenca: '100%' },
+    { disciplina: 'Construção de Frontend', faltas: 0, presenca: '100%' },
+    { disciplina: 'Manutenção de Software e Devops', faltas: 0, presenca: '100%' }
+  ]
+
+  const semestre20252 = [
+    { disciplina: 'Construção de Backend', faltas: 27, presenca: '87.5%' },
+    { disciplina: 'Estrutura de Dados', faltas: 9, presenca: '85%' },
+    { disciplina: 'Gerenciamento de Projetos', faltas: 10.5, presenca: '82.5%' }
+  ]
+
+  const semestre20251 = [
+    { disciplina: 'Algoritmos e Programação', faltas: 5, presenca: '92%' },
+    { disciplina: 'Banco de Dados', faltas: 2, presenca: '96%' }
+  ]
+
+  const colunas = ['Disciplina', 'Total de Faltas', '% de Presença']
+
   return (
-    <div className="app-container">
-      <Sidebar />
-
-      <main className="main-content faltas-container">
-        <Topbar />
-
-        <header className="faltas-header">
-          <h1>Aluno Online</h1>
-          <h2>Minhas Faltas</h2>
-        </header>
-
-        <section className="semestre-card">
-          <div className="semestre-header">
-            <h3>2026.1</h3>
-          </div>
-
-          <div className="table-container">
-            <table className="faltas-table">
-              <thead>
-                <tr>
-                  <th>Disciplina</th>
-                  <th>Faltas</th>
-                  <th>Limite</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Construção de Frontend</td>
-                  <td>4</td>
-                  <td>15</td>
-                </tr>
-                <tr>
-                  <td>BI e Data Warehousing</td>
-                  <td>2</td>
-                  <td>15</td>
-                </tr>
-                <tr>
-                  <td>Manutenção de Software e DevOps</td>
-                  <td>1</td>
-                  <td>15</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section className="semestre-card">
-          <div className="semestre-header">
-            <h3>2025.2</h3>
-          </div>
-
-          <div className="table-container">
-            <table className="faltas-table">
-              <thead>
-                <tr>
-                  <th>Disciplina</th>
-                  <th>Faltas</th>
-                  <th>Limite</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Banco de Dados</td>
-                  <td>3</td>
-                  <td>15</td>
-                </tr>
-                <tr>
-                  <td>Backend</td>
-                  <td>5</td>
-                  <td>15</td>
-                </tr>
-                <tr>
-                  <td>Engenharia de Software</td>
-                  <td>0</td>
-                  <td>15</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-      </main>
-    </div>
-  );
+    <Layout titulo="Minhas Faltas" subtitulo="Histórico de Faltas por Semestre">
+      <Tabela titulo="2026.1" colunas={colunas} dados={semestre20261} />
+      <Tabela titulo="2025.2" colunas={colunas} dados={semestre20252} />
+      <Tabela titulo="2025.1" colunas={colunas} dados={semestre20251} />
+    </Layout>
+  )
 }
 
-export default Faltas;
+export default Faltas

@@ -1,28 +1,34 @@
-import "./Dashboard.css";
-import Topbar from "../components/Topbar";
-import Card from "../components/Card";
-import Sidebar from "../components/Sidebar";
+import Layout from '../components/Layout'
+import Card from '../components/Card'
 
 function Dashboard() {
   return (
-    <div className="app-container">
-      <Sidebar />
+    <Layout titulo="Dashboard" subtitulo="Bem-vindo ao portal do aluno">
+      <Card title="Mural de Avisos">
+        <ul>
+          <li>Inscrição para o projeto de extensão</li>
+          <li>Eleição para representante de turma</li>
+        </ul>
+      </Card>
 
-      <main className="main-content dashboard-container">
-        <Topbar />
+      <Card title="Calendário Acadêmico">
+        <ul>
+          <li>23/02 - Início do período letivo 2026-1</li>
+          <li>25/04 - Prazo final para aplicação da P1</li>
+          <li>23/06 - Prazo final para aplicação da P2</li>
+          <li>04/07 - Fim do período letivo 2026-1</li>
+        </ul>
+      </Card>
 
-        <section className="dashboard-header">
-          <h2>Bem-vindo ao Portal do Aluno</h2>
-        </section>
-
-        <section className="dashboard-cards">
-          <Card />
-          <Card />
-          <Card />
-        </section>
-      </main>
-    </div>
-  );
+      <Card title="Minhas Disciplinas">
+        <ul>
+          <li>BI e Data Warehousing</li>
+          <li>Construção de Frontend</li>
+          <li>Manutenção de Software e Devops</li>
+        </ul>
+      </Card>
+    </Layout>
+  )
 }
 
-export default Dashboard;
+export default Dashboard

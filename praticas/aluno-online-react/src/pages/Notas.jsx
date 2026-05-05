@@ -1,102 +1,33 @@
-import "./Notas.css";
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+import Layout from '../components/Layout'
+import Tabela from '../components/Tabela'
 
 function Notas() {
+  const semestre20261 = [
+    { disciplina: 'BI e Data Warehousing', a1: '', a2: '', a3: '', mencao: 'SR' },
+    { disciplina: 'Construção de Frontend', a1: '', a2: '', a3: '', mencao: 'SR' },
+    { disciplina: 'Manutenção de Software e Devops', a1: '', a2: '', a3: '', mencao: 'SR' }
+  ]
+
+  const semestre20252 = [
+    { disciplina: 'Construção de Backend', a1: '5.4', a2: '6.2', a3: '', mencao: 'MM' },
+    { disciplina: 'Estrutura de Dados', a1: '6.3', a2: '6.1', a3: '', mencao: 'MM' },
+    { disciplina: 'Gerenciamento de Projetos', a1: '7.4', a2: '7.1', a3: '', mencao: 'MS' }
+  ]
+
+  const semestre20251 = [
+    { disciplina: 'Algoritmos e Programação', a1: '7.0', a2: '8.5', a3: '', mencao: 'MS' },
+    { disciplina: 'Banco de Dados', a1: '8.0', a2: '8.0', a3: '', mencao: 'MS' }
+  ]
+
+  const colunas = ['Disciplina', 'A1', 'A2', 'A3', 'Menção']
+
   return (
-    <div className="app-container">
-      <Sidebar />
-
-      <main className="main-content notas-container">
-        <Topbar />
-
-        <header className="notas-header">
-          <h1>Aluno Online</h1>
-          <h2>Minhas Notas</h2>
-        </header>
-
-        <section className="notas-card">
-          <div className="notas-card-header">
-            <h3>2026.1</h3>
-          </div>
-
-          <div className="table-container">
-            <table className="notas-table">
-              <thead>
-                <tr>
-                  <th>Disciplina</th>
-                  <th>A1</th>
-                  <th>A2</th>
-                  <th>Média</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Construção de Frontend</td>
-                  <td>8,5</td>
-                  <td>9,0</td>
-                  <td>8,8</td>
-                </tr>
-                <tr>
-                  <td>BI e Data Warehousing</td>
-                  <td>7,5</td>
-                  <td>8,0</td>
-                  <td>7,8</td>
-                </tr>
-                <tr>
-                  <td>Manutenção de Software e DevOps</td>
-                  <td>9,0</td>
-                  <td>8,5</td>
-                  <td>8,8</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section className="notas-card">
-          <div className="notas-card-header">
-            <h3>2025.2</h3>
-          </div>
-
-          <div className="table-container">
-            <table className="notas-table">
-              <thead>
-                <tr>
-                  <th>Disciplina</th>
-                  <th>A1</th>
-                  <th>A2</th>
-                  <th>Média</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr>
-                  <td>Banco de Dados</td>
-                  <td>8,0</td>
-                  <td>7,5</td>
-                  <td>7,8</td>
-                </tr>
-                <tr>
-                  <td>Backend</td>
-                  <td>9,0</td>
-                  <td>8,5</td>
-                  <td>8,8</td>
-                </tr>
-                <tr>
-                  <td>Engenharia de Software</td>
-                  <td>7,0</td>
-                  <td>8,0</td>
-                  <td>7,5</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-      </main>
-    </div>
-  );
+    <Layout titulo="Minhas Notas" subtitulo="Histórico de Notas por Semestre">
+      <Tabela titulo="2026.1" colunas={colunas} dados={semestre20261} />
+      <Tabela titulo="2025.2" colunas={colunas} dados={semestre20252} />
+      <Tabela titulo="2025.1" colunas={colunas} dados={semestre20251} />
+    </Layout>
+  )
 }
 
-export default Notas;
+export default Notas

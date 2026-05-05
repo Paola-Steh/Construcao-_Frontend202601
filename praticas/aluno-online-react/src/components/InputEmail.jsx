@@ -1,22 +1,21 @@
-import "./InputEmail.css";
+import './InputEmail.css'
 
-function InputEmail() {
+function InputEmail({ label, value, onChange, error, placeholder = 'Digite seu e-mail' }) {
   return (
-    <div className="input-group">
-      <label htmlFor="email">Email</label>
-
+    <fieldset className="input-group">
+      <label htmlFor="email">{label}</label>
       <input
         type="email"
         id="email"
         name="email"
-        placeholder="Digite seu email"
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        className={error ? 'input-error' : ''}
       />
-
-      <span className="error-message">
-        Email inválido
-      </span>
-    </div>
-  );
+      {error && <small className="error-message">{error}</small>}
+    </fieldset>
+  )
 }
 
-export default InputEmail;
+export default InputEmail
