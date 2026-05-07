@@ -30,4 +30,4 @@ function Notas() {
   )
 }
 
-export default Notas
+export default Notas;

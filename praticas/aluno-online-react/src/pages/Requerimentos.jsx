@@ -19,4 +19,4 @@ function Requerimentos() {
   )
 }
 
-export default Requerimentos
+export default Requerimentos;

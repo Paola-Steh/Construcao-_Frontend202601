@@ -26,4 +26,4 @@ function Boletos() {
   )
 }
 
-export default Boletos
+export default Boletos;
