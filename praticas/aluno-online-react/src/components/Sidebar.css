@@ -58,3 +58,9 @@
     width: 280px;
   }
 }
+
+.sidebar-nav a.active {
+  background-color: #303030;
+  color: white;
+  font-weight: bold;
+}
