@@ -1,8 +1,9 @@
 import "./Layout.css";
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
+import { Outlet } from "react-router";
 
-function Layout({ children }) {
+function Layout() {
   return (
     <div className="app-container">
       <Sidebar />
@@ -11,7 +12,7 @@ function Layout({ children }) {
         <Topbar />
 
         <div className="content-area">
-          {children}
+          <Outlet />
         </div>
       </div>
     </div>
