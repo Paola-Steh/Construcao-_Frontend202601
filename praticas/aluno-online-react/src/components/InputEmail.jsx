@@ -18,4 +18,4 @@ function InputEmail({ label, value, onChange, error, placeholder = 'Digite seu e
   )
 }
 
-export default InputEmail
+export default InputEmail;

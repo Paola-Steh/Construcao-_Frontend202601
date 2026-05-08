@@ -32,4 +32,4 @@ function Tabela({ titulo, colunas, dados }) {
   )
 }
 
-export default Tabela
+export default Tabela;

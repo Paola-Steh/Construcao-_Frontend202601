@@ -15,4 +15,4 @@ function Card({ title, children, className = '' }) {
   )
 }
 
-export default Card
+export default Card;

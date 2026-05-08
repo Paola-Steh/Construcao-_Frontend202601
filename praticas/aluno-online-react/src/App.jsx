@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Routes, Route } from 'react-router'
 import Dashboard from './pages/Dashboard'
 import Faltas from './pages/Faltas'
@@ -19,6 +20,12 @@ function App() {
 
       </Routes>
   )
+=======
+import Login from './pages/Login'
+
+function App() {
+  return <Login />
+>>>>>>> 950f4f37db96797373b1d3ac4dc97b9834b15681
 }
 
 export default App;

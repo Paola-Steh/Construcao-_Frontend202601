@@ -30,4 +30,4 @@ function Faltas() {
   )
 }
 
-export default Faltas
+export default Faltas;

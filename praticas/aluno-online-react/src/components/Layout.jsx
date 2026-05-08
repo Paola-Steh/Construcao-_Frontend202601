@@ -22,4 +22,4 @@ function Layout({ titulo, subtitulo, children }) {
   )
 }
 
-export default Layout
+export default Layout;
