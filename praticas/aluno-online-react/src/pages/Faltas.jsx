@@ -1,5 +1,6 @@
 import Layout from '../components/Layout'
 import Tabela from '../components/Tabela'
+import Topbar from '../components/Topbar'
 
 function Faltas() {
   const semestre20261 = [
@@ -22,11 +23,14 @@ function Faltas() {
   const colunas = ['Disciplina', 'Total de Faltas', '% de Presença']
 
   return (
-    <Layout titulo="Minhas Faltas" subtitulo="Histórico de Faltas por Semestre">
+    <>
+    <Topbar titulo="Minhas Faltas" subtitulo="Histórico de Faltas por Semestre"/>
+    <div className="content-area">
       <Tabela titulo="2026.1" colunas={colunas} dados={semestre20261} />
       <Tabela titulo="2025.2" colunas={colunas} dados={semestre20252} />
       <Tabela titulo="2025.1" colunas={colunas} dados={semestre20251} />
-    </Layout>
+      </div>
+    </>
   )
 }
 

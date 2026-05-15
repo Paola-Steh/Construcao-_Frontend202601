@@ -1,9 +1,18 @@
 import Layout from '../components/Layout'
 import Card from '../components/Card'
+import Topbar from '../components/Topbar';
+import { useAuthContext } from '../contexts/AuthContext';
 
 function Dashboard() {
+  const { usuario } = useAuthContext()
   return (
-    <Layout titulo="Dashboard" subtitulo="Bem-vindo ao portal do aluno">
+    
+    <>
+ <Topbar titulo={`Olá, ${usuario.nome}!`} subtitulo="Bem-vindo ao portal do aluno!" />
+
+        <div className="content-area">
+
+
       <Card title="Mural de Avisos">
         <ul>
           <li>Inscrição para o projeto de extensão</li>
@@ -27,7 +36,8 @@ function Dashboard() {
           <li>Manutenção de Software e Devops</li>
         </ul>
       </Card>
-    </Layout>
+      </div>
+    </>
   )
 }
 

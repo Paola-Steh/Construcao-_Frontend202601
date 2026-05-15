@@ -1,5 +1,6 @@
 import Layout from '../components/Layout'
 import Tabela from '../components/Tabela'
+import Topbar from '../components/Topbar'
 
 function Requerimentos() {
   const requerimentos = [
@@ -13,9 +14,11 @@ function Requerimentos() {
   const colunas = ['Tipo de Requerimento', 'Data de Solicitação', 'Situação']
 
   return (
-    <Layout titulo="Meus Requerimentos" subtitulo="Faça solicitações online para a secretaria">
+    <>
+     <Topbar titulo="Meus Requerimentos" subtitulo=""/>
+    <div className="content-area"></div>
       <Tabela colunas={colunas} dados={requerimentos} />
-    </Layout>
+    </>
   )
 }
 

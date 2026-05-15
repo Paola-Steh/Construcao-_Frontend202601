@@ -1,17 +1,32 @@
 import './Topbar.css'
 
-function Topbar() {
+import { useAuthContext } from '../contexts/AuthContext'
+
+function Topbar({ titulo, subtitulo }) {
+
+  const { usuario } = useAuthContext()
+
   return (
     <header className="topbar">
+
       <section className="user-greeting">
-        <span>Olá, Aluno!</span>
-        <p className="welcome-message">Bem-vindo ao portal do aluno</p>
+
+        <span>
+          { titulo }
+        </span>
+
+        <p className="welcome-message">
+          { subtitulo }
+        </p>
+
       </section>
+
       <figure className="user-avatar">
         <img src="/avatar.svg" alt="Avatar do usuário" />
       </figure>
+
     </header>
   )
 }
 
-export default Topbar;
+export default Topbar

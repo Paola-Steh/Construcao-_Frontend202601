@@ -1,67 +1,66 @@
-import { useState } from 'react'
-import InputMatricula from '../components/InputMatricula'
-import InputSenha from '../components/InputSenha'
-import BotaoSubmit from '../components/BotaoSubmit'
+import { useNavigate } from "react-router";
+import { useAuthContext } from "../contexts/AuthContext";
+import { useState } from "react";
+import BotaoSubmit from "../components/BotaoSubmit";
+import InputEmail from "../components/InputEmail";
+import InputSenha from "../components/InputSenha";
 
 function FormLogin() {
-  const [matricula, setMatricula] = useState('')
-  const [senha, setSenha] = useState('')
-  const [matriculaErro, setMatriculaErro] = useState('')
-  const [senhaErro, setSenhaErro] = useState('')
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  const navigate = useNavigate();
 
-    let formularioValido = true
+  const { login } = useAuthContext();
 
-    setMatriculaErro('')
-    setSenhaErro('')
 
-    if (!matricula.trim()) {
-      setMatriculaErro('Matrícula é obrigatória')
-      formularioValido = false
+ const [email, setEmail] = useState();
+  const [senha, setSenha] = useState();
+  const [emailErro, setEmailErro] = useState();
+  const [senhaErro, setSenhaErro] = useState();
+
+  const trataSubmit = (e) => {
+    e.preventDefault();
+
+    if (!email) {
+      setEmailErro("Matrícula é obrigatório");
+      return
     }
 
-    if (!senha.trim()) {
-      setSenhaErro('Senha é obrigatória')
-      formularioValido = false
-    } else if (senha.length < 6) {
-      setSenhaErro('A senha deve ter no mínimo 6 caracteres')
-      formularioValido = false
+    if (!senha) {
+      setSenhaErro("Senha é obrigatório");
+      return
     }
 
-    if (formularioValido) {
-      alert('Login realizado com sucesso!')
-    }
-  }
+      login({
+      usuario: "paola@iesb.edu.br",
+      senha: "123456",
+    });
 
-  function mudaMatricula(e) {
-    setMatricula(e.target.value)
-    setMatriculaErro('')
-  }
+    navigate("/");
+  };
 
-  function mudaSenha(e) {
-    setSenha(e.target.value)
-    setSenhaErro('')
-  }
+  const mudaEmail = (e) => {
+    setEmail(e.target.value);
+    setEmailErro("");
+  };
+
+  const mudaSenha = (e) => {
+    setSenha(e.target.value);
+    setSenhaErro("");
+  };
 
   return (
-    <form onSubmit={handleSubmit} className="login-form">
-      <InputMatricula
-        value={matricula}
-        onChange={mudaMatricula}
-        error={matriculaErro}
+    <form onSubmit={trataSubmit}>
+      <InputEmail
+        error={emailErro}
+        mudaValor={mudaEmail}
       />
-
-      <InputSenha
-        value={senha}
-        onChange={mudaSenha}
-        error={senhaErro}
+      <InputSenha 
+      error={senhaErro} 
+      mudaValor={mudaSenha} 
       />
-
       <BotaoSubmit>Entrar</BotaoSubmit>
     </form>
-  )
+  );
 }
 
 export default FormLogin;
