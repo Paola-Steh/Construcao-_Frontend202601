@@ -6,7 +6,7 @@ const AuthContext = createContext();
 
 // cria o provedor
 function AuthProvider({ children }) {
-    const [logado, setLogado] = useState(false);
+    const [logado, setLogado] = useState(true);
     const [usuario, setUsuario] = useState({});
 
     // chamar a API passando dados
