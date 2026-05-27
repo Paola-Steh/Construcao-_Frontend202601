@@ -21,7 +21,7 @@ function FormLogin() {
     e.preventDefault();
 
     if (!email) {
-      setEmailErro("Matrícula é obrigatório");
+      setEmailErro("Email é obrigatório");
       return
     }
 
@@ -52,11 +52,13 @@ function FormLogin() {
     <form onSubmit={trataSubmit}>
       <InputEmail
         error={emailErro}
-        mudaValor={mudaEmail}
+        onChange={mudaEmail}
+        value={email}
       />
       <InputSenha 
       error={senhaErro} 
-      mudaValor={mudaSenha} 
+      onChange={mudaSenha}
+      value={senha} 
       />
       <BotaoSubmit>Entrar</BotaoSubmit>
     </form>
