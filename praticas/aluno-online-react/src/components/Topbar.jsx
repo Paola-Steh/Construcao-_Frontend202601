@@ -1,10 +1,10 @@
 import './Topbar.css'
 
-import { useAuthContext } from '../contexts/AuthContext'
+// import { useAuthContext } from '../hooks/useAuthContext'
 
 function Topbar({ titulo, subtitulo }) {
 
-  const { usuario } = useAuthContext()
+//  const { usuario } = useAuthContext()
 
   return (
     <header className="topbar">

@@ -8,7 +8,7 @@ import Layout from "./pages/Layout";
 import Login from "./pages/Login";
 import Erro404 from "./pages/Erro404";
 
-import { useAuthContext } from "./contexts/AuthContext";
+import { useAuthContext } from "./hooks/useAuthContext";
 
 function App() {
   const { logado } = useAuthContext();

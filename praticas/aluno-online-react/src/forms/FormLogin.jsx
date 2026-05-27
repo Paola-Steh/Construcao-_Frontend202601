@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import { useAuthContext } from "../contexts/AuthContext";
+import { useAuthContext } from "../hooks/useAuthContext";
 import { useState } from "react";
 import BotaoSubmit from "../components/BotaoSubmit";
 import InputEmail from "../components/InputEmail";

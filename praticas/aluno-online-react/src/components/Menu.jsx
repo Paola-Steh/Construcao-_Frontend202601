@@ -6,7 +6,7 @@ import { useAuthContext } from '../contexts/AuthContext'
 
 function Menu() {
 
-  const usuarioId = 0; //Pegou da API
+  //const usuarioId = 0; //Pegou da API
 
     const { logout, usuario } = useAuthContext();
 

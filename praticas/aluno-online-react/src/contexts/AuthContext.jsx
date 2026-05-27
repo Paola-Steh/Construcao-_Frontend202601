@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 
 // Cria o contexto
@@ -10,7 +10,7 @@ function AuthProvider({ children }) {
     const [usuario, setUsuario] = useState({});
 
     // chamar a API passando dados
-    const login = (dados) => {
+    const login = () => {
         setUsuario({ 
             id: 0, 
             nome: "Paola", 
@@ -31,11 +31,7 @@ function AuthProvider({ children }) {
     )
 }
 
-// essa função inteira é um "hook" > uma função personalizada para não ficar repetitiva no código
-function useAuthContext() {
-    return useContext(AuthContext);
-}
 
-export { useAuthContext, AuthProvider };
+export { AuthContext, AuthProvider };
 
 
