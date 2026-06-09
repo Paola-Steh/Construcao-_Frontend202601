@@ -13,10 +13,34 @@
       "id": "LlhEJx_Svtw"
     },
     {
-      "nome": "banana",
-      "preco": 12.5,
-      "unidade": "kg",
-      "id": "Slf83-rn68I"
+      "nome": "Paola",
+      "preco": "200",
+      "unidade": "1",
+      "id": "f0Jlcl2lYQY"
+    },
+    {
+      "nome": "xuxu",
+      "preco": "1",
+      "unidade": "10",
+      "id": "CbHjDBEDxTs"
+    },
+    {
+      "nome": "pao da batata",
+      "preco": "10",
+      "unidade": "5",
+      "id": "dCkI19ws5TU"
+    },
+    {
+      "nome": "pao com opa",
+      "preco": "80",
+      "unidade": "1",
+      "id": "3tQX6-S6hno"
+    },
+    {
+      "id": "c7EE9tQYnRw",
+      "nome": "xuixu",
+      "preco": "4",
+      "unidade": "4"
     }
   ],
   "clientes": [],
