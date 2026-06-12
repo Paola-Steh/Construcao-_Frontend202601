@@ -1,0 +1,25 @@
+const url = "http://localhost:3000/usuarios";
+
+// ^ o ideal é que ele fique em um arquivo separado, para nao ficar com o endereço exposto na internet
+
+async function autenticar(credenciais) {
+  const { email, senha } = credenciais;
+  const resposta = await fetch(`${url}?email=${credenciais.email}`);
+  const usuario = await resposta.json();
+
+  // SABOR AUTENTICAÇÃO
+  if (usuario[0]?.email === email && 
+    usuario[0]?.senha === senha) {
+    return {
+      email,
+      token:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30",
+    };
+  }
+
+  return { email: "", token: "" };
+
+}
+
+
+export { autenticar };
