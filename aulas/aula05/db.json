@@ -41,6 +41,12 @@
       "nome": "xuixu",
       "preco": "4",
       "unidade": "4"
+    },
+    {
+      "nome": "<script>alert(\"perdeu\")</script>",
+      "preco": "1",
+      "unidade": "",
+      "id": "zs9UXkbbK0w"
     }
   ],
   "clientes": [],
@@ -48,7 +54,7 @@
   "pedidos": [],
   "usuarios": [
     {
-      "email":"juana@iesb.br",
+      "email": "juana@iesb.br",
       "senha": "123456",
       "id": "abcd1234"
     }
