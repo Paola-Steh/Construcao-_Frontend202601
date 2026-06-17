@@ -1,8 +1,8 @@
 import './InputSenha.css'
 
-function InputSenha({ value, onChange, error }) {
+function InputSenha({ value, onChange, erro }) {
   return (
-    <fieldset className="input-group">
+    <>
       <label htmlFor="senha">Senha</label>
       <input
         type="password"
@@ -10,13 +10,10 @@ function InputSenha({ value, onChange, error }) {
         name="senha"
         value={value}
         onChange={onChange}
-        placeholder="Digite sua senha"
-        className={error ? 'input-error' : ''}
       />
-      {error && <small className="error-message">{error}</small>}
-    </fieldset>
+      <p>{erro}</p>
+    </>
   )
 }
 
-export default InputSenha;
-
+export default InputSenha

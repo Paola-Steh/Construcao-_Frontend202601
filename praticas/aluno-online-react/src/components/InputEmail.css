@@ -1,37 +1,27 @@
-.input-group {
-  border: none;
-  padding: 0;
-  margin: 0 0 1rem 0;
+p {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0 0;
+  min-height: 1.25rem;
 }
 
-.input-group label {
+label {
   display: block;
-  margin-bottom: 0.5rem;
   font-weight: 500;
   color: #303030;
+  margin-bottom: 0.5rem;
 }
 
-.input-group input {
+input {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ddd;
-  border-radius: 6px;
+  border-radius: 4px;
   font-size: 1rem;
-  transition: border-color 0.3s;
+  box-sizing: border-box;
 }
 
-.input-group input:focus {
+input:focus {
   outline: none;
-  border-color: #303030;
-}
-
-.input-group input.input-error {
-  border-color: #c33;
-}
-
-.error-message {
-  display: block;
-  color: #c33;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
+  border-color: #1a6dff;
 }
