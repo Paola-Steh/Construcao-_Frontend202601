@@ -1,37 +1,45 @@
 import { createContext, useState } from "react";
 
-
-// Cria o contexto
 const AuthContext = createContext();
 
-// cria o provedor
 function AuthProvider({ children }) {
-    const [logado, setLogado] = useState(false);
-    const [usuario, setUsuario] = useState({});
+  const [usuario, setUsuario] = useState(() => {
+    const usuarioSalvo = localStorage.getItem("usuario");
+    return usuarioSalvo ? JSON.parse(usuarioSalvo) : null;
+  });
 
-    // chamar a API passando dados
-    const login = () => {
-        setUsuario({ 
-            id: 0, 
-            nome: "Paola", 
-            email: "paola@iesb.edu.br"});
-        setLogado(true);
-    };
+  const [autenticado, setAutenticado] = useState(() => {
+    return localStorage.getItem("autenticado") === "true";
+  });
 
-    const logout = () => {
-        setUsuario({});
-        setLogado(false);
-    };
+  const login = (dadosUsuario) => {
+    setUsuario(dadosUsuario);
+    setAutenticado(true);
 
-    return (
-        <AuthContext.Provider value={{ logado, usuario, login, logout }}> 
-            {/* "value" é o estado compartilhado */}
-            { children }
-        </AuthContext.Provider>
-    )
+    localStorage.setItem("usuario", JSON.stringify(dadosUsuario));
+    localStorage.setItem("autenticado", "true");
+  };
+
+  const logout = () => {
+    setUsuario(null);
+    setAutenticado(false);
+
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("autenticado");
+  };
+
+  return (
+    <AuthContext.Provider
+      value={{
+        autenticado,
+        usuario,
+        login,
+        logout,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
-
-export { AuthContext, AuthProvider };
-
-
+export { AuthProvider, AuthContext };

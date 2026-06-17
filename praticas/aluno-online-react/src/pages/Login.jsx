@@ -1,26 +1,50 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/useAuth";
 import "./Login.css";
-import logo from "../assets/learn.svg";
-import FormLogin from "../forms/FormLogin";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Simulação de login - em produção, chamaria API
+    login({ email, nome: "Cauã Mata" });
+    navigate("/");
+  };
+
   return (
-    <main className="login-page">
-      <section className="login-card">
-        <img
-          src={logo}
-          alt="Imagem do logo"
-          className="login-logo"
-        />
-
-        <h1>Aluno Online</h1>
-
-        <FormLogin />
-      </section>
-
-      <footer className="login-footer">
-        © 2026. Todos os direitos reservados.
-      </footer>
-    </main>
+    <div className="login-container">
+      <div className="login-card">
+        <h1>Login</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="senha">Senha</label>
+            <input
+              type="password"
+              id="senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </div>
   );
 }
 
