@@ -1,34 +1,46 @@
-import "./style.css";
+import './style.css'
 
-const botao = document.querySelector("button");
+const form = document.getElementById('loginForm');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const errorMessage = document.getElementById('errorMessage');
 
-botao.addEventListener("click", (e) => {
-  e.preventDefault ();
-  const matriculaInput = document.querySelector("#matricula");
-  const matriculaErro = document.querySelector("#matriculaErro");
-  const senhaInput = document.querySelector("#senha");
-  const senhaErro = document.querySelector("#senhaErro");
+function showError(message) {
+  errorMessage.textContent = message;
+  errorMessage.style.display = 'block';
+}
 
-  matriculaErro.textContent = '';
-  senhaErro.textContent = '';
+function clearError() {
+  errorMessage.textContent = '';
+  errorMessage.style.display = 'none';
 
-  if (matriculaInput.value == "") {
-    matriculaErro.textContent = "Matrícula é obrigatória";
-    return;
+  email.classList.remove('input-error');
+  password.classList.remove('input-error');
+}
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  clearError();
+
+  let hasError = false;
+
+  if (email.value.trim() === '') {
+    showError('O campo e-mail é obrigatório.');
+    email.classList.add('input-error');
+    hasError = true;
   }
 
-  if (parseInt(matriculaInput.value) <= 0) {
-    matriculaErro.textContent = "Matrícula deve ser um número positivo";
-    return;
+  if (password.value.trim() === '') {
+    showError('O campo senha é obrigatório.');
+    password.classList.add('input-error');
+    hasError = true;
   }
 
-  if (senhaInput.value == "") {
-    senhaErro.textContent = "Senha é obrigatória";
-    return;
-  }
-
-  if (senhaInput.value.length < 8) {
-    senhaErro.textContent = "A Senha deve conter pelo menos 8 caracteres";
-    return;
+  if (!hasError) {
+    window.location.href = '/';
   }
 });
+
+email.addEventListener('input', clearError);
+password.addEventListener('input', clearError);

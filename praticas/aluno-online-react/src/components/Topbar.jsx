@@ -1,30 +1,18 @@
 import './Topbar.css'
+import { useAuth } from '../contexts/useAuth'
 
-// import { useAuthContext } from '../hooks/useAuthContext'
-
-function Topbar({ titulo, subtitulo }) {
-
-//  const { usuario } = useAuthContext()
+function Topbar() {
+  const { usuario } = useAuth()
 
   return (
     <header className="topbar">
-
       <section className="user-greeting">
-
-        <span>
-          { titulo }
-        </span>
-
-        <p className="welcome-message">
-          { subtitulo }
-        </p>
-
+        <span>Olá, {usuario?.nome || 'Aluno'}!</span>
+        <p className="welcome-message">Bem-vindo ao portal do aluno</p>
       </section>
-
       <figure className="user-avatar">
         <img src="/avatar.svg" alt="Avatar do usuário" />
       </figure>
-
     </header>
   )
 }

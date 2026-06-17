@@ -1,21 +1,19 @@
 import './InputEmail.css'
 
-function InputEmail({ value, onChange, error }) {
+function InputEmail({ value, onChange, erro }) {
   return (
-    <fieldset className="input-group">
-      <label htmlFor="email">Senha</label>
+    <>
+      <label htmlFor="email">E-mail</label>
       <input
         type="email"
         id="email"
         name="email"
         value={value}
         onChange={onChange}
-        placeholder="Digite sua senha"
-        className={error ? 'input-error' : ''}
       />
-      {error && <small className="error-message">{error}</small>}
-    </fieldset>
+      <p>{erro}</p>
+    </>
   )
 }
 
-export default InputEmail;
+export default InputEmail
