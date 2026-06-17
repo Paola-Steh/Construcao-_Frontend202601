@@ -1,5 +1,6 @@
-import Layout from '../components/Layout'
+import { Link } from 'react-router-dom'
 import Tabela from '../components/Tabela'
+import './Requerimentos.css'
 
 function Requerimentos() {
   const requerimentos = [
@@ -13,10 +14,21 @@ function Requerimentos() {
   const colunas = ['Tipo de Requerimento', 'Data de Solicitação', 'Situação']
 
   return (
-    <Layout titulo="Meus Requerimentos" subtitulo="Faça solicitações online para a secretaria">
+    <>
+      <header className="page-header">
+        <h1>Meus Requerimentos</h1>
+        <h2>Faça solicitações online para a secretaria</h2>
+      </header>
+
+      <section className="requerimentos-actions">
+        <Link to="/requerimentos/novo" className="novo-requerimento-link">
+          ➕ Novo Requerimento
+        </Link>
+      </section>
+
       <Tabela colunas={colunas} dados={requerimentos} />
-    </Layout>
+    </>
   )
 }
 
-export default Requerimentos;
+export default Requerimentos
