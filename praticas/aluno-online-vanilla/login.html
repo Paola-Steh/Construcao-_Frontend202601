@@ -1,29 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pag Login</title>
-
-  </head>
-  <body class="login-page">
-    <main>
-      <img src="/learn.svg" alt="Icone chapeu formatura" />
-      <h1>Aluno Online</h1>
-
-      <label for="matricula">Matrícula</label>
-      <input type="number" id="matricula" name="matricula" />
-      <span id="matriculaErro"></span>
-
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" name="senha" />
-      <span id="senhaErro"></span>
-      <button type="submit">Entrar</button>
-    </main>
-    <footer>© 2026. Todos os direitos reservados.</footer>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+</head>
+<body>
+  <main class="login-container">
+    <form id="loginForm" class="login-form">
+      <img src="learn.svg" alt="Icone chapeu" class="login-icon">
+      <h1 class="login-title">Aluno Online</h1>
+      <p id="errorMessage" class="error-message"></p>
+      <fieldset class="form-group">
+        <label for="email">E-mail</label>
+        <input 
+          type="email" 
+          id="email" 
+          class="input"
+        />
+      </fieldset>
+      <fieldset class="form-group">
+        <label for="password">Senha</label>
+        <input 
+          type="password" 
+          id="password" 
+          class="input"
+        />
+      </fieldset>
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+  </main>
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>
-
-
-

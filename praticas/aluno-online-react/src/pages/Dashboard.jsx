@@ -1,18 +1,13 @@
-import Layout from '../components/Layout'
 import Card from '../components/Card'
-import Topbar from '../components/Topbar';
-import { useAuthContext } from '../hooks/useAuthContext';
 
 function Dashboard() {
-  const { usuario } = useAuthContext()
   return (
-    
     <>
- <Topbar titulo={`Olá, ${usuario.nome}!`} subtitulo="Bem-vindo ao portal do aluno!" />
-
-        <div className="content-area">
-
-
+      <header className="page-header">
+        <h1>Dashboard</h1>
+        <h2>Bem-vindo ao portal do aluno</h2>
+      </header>
+      
       <Card title="Mural de Avisos">
         <ul>
           <li>Inscrição para o projeto de extensão</li>
@@ -36,9 +31,8 @@ function Dashboard() {
           <li>Manutenção de Software e Devops</li>
         </ul>
       </Card>
-      </div>
     </>
   )
 }
 
-export default Dashboard;
+export default Dashboard

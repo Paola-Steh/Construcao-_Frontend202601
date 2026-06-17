@@ -1,33 +1,35 @@
-import Layout from '../components/Layout'
 import Tabela from '../components/Tabela'
-import Topbar from '../components/Topbar'
 
 function Boletos() {
   const boletos = [
-    { vencimento: '15/01/2026', valor: '500,00', situacao: 'Pago' },
-    { vencimento: '15/02/2026', valor: '500,00', situacao: 'Pago' },
-    { vencimento: '15/03/2026', valor: '500,00', situacao: 'Pago' },
-    { vencimento: '15/04/2026', valor: '700,00', situacao: 'Em atraso' },
-    { vencimento: '15/05/2026', valor: '500,00', situacao: 'A Pagar' },
-    { vencimento: '15/06/2026', valor: '500,00', situacao: 'A Pagar' },
-    { vencimento: '15/07/2026', valor: '500,00', situacao: 'A Pagar' },
-    { vencimento: '15/08/2026', valor: '500,00', situacao: 'A Pagar' },
-    { vencimento: '15/09/2026', valor: '500,00', situacao: 'A Pagar' },
-    { vencimento: '15/10/2026', valor: '500,00', situacao: 'A Pagar' },
-    { vencimento: '15/11/2026', valor: '500,00', situacao: 'A Pagar' },
-    { vencimento: '15/12/2026', valor: '500,00', situacao: 'A Pagar' }
+    { vencimento: '19/01/2026', valor: '500,00', situacao: 'Pago' },
+    { vencimento: '19/02/2026', valor: '500,00', situacao: 'Em atraso' },
+    { vencimento: '19/03/2026', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/04/2026', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/05/2026', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/06/2026', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/07/2026', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/08/2026', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/09/2026', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/10/2026', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/11/2026', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/12/2026', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/01/2027', valor: '500,00', situacao: 'A Pagar' },
+    { vencimento: '19/02/2027', valor: '500,00', situacao: 'A Pagar' }
   ]
 
   const colunas = ['Vencimento', 'Valor R$', 'Situação']
 
   return (
     <>
-    <Topbar titulo="Meus Boletos  " />
-    <div className="content-area">
+      <header className="page-header">
+        <h1>Meus Boletos</h1>
+        <h2>Histórico de Pagamentos</h2>
+      </header>
+      
       <Tabela colunas={colunas} dados={boletos} />
-    </div>
     </>
   )
 }
 
-export default Boletos;
+export default Boletos

@@ -1,26 +1,78 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/useAuth";
+import { autenticar } from "../services/authService";
 import "./Login.css";
-import logo from "../assets/learn.svg";
-import FormLogin from "../forms/FormLogin";
 
 function Login() {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [erro, setErro] = useState("");
+
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setErro("");
+
+    try {
+      const resposta = await autenticar(email, senha);
+
+      login(resposta.usuario, resposta.token);
+
+      navigate("/");
+    } catch (error) {
+      setErro(error.message);
+    }
+  };
+
   return (
-    <main className="login-page">
-      <section className="login-card">
-        <img
-          src={logo}
-          alt="Imagem do logo"
-          className="login-logo"
-        />
+    <div className="login-container">
+      <div className="login-card">
+        <h1>Login</h1>
 
-        <h1>Aluno Online</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
 
-        <FormLogin />
-      </section>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-      <footer className="login-footer">
-        © 2026. Todos os direitos reservados.
-      </footer>
-    </main>
+          <div className="form-group">
+            <label htmlFor="senha">Senha</label>
+
+            <input
+              type="password"
+              id="senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+          </div>
+
+          {erro && (
+            <p
+              style={{
+                color: "red",
+                marginBottom: "10px",
+              }}
+            >
+              {erro}
+            </p>
+          )}
+
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+    </div>
   );
 }
 
