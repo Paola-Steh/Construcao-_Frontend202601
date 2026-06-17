@@ -9,11 +9,8 @@ function Layout() {
       <Sidebar />
 
       <div className="main-content">
-        <Topbar />
 
-        <div className="content-area">
           <Outlet />
-        </div>
       </div>
     </div>
   );

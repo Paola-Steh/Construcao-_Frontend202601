@@ -1,16 +1,16 @@
 import './InputEmail.css'
 
-function InputEmail({ label, value, onChange, error, placeholder = 'Digite seu e-mail' }) {
+function InputEmail({ value, onChange, error }) {
   return (
     <fieldset className="input-group">
-      <label htmlFor="email">{label}</label>
+      <label htmlFor="email">Senha</label>
       <input
         type="email"
         id="email"
         name="email"
         value={value}
         onChange={onChange}
-        placeholder={placeholder}
+        placeholder="Digite sua senha"
         className={error ? 'input-error' : ''}
       />
       {error && <small className="error-message">{error}</small>}

@@ -1,5 +1,6 @@
 import Layout from '../components/Layout'
 import Tabela from '../components/Tabela'
+import Topbar from '../components/Topbar'
 
 function Boletos() {
   const boletos = [
@@ -20,9 +21,12 @@ function Boletos() {
   const colunas = ['Vencimento', 'Valor R$', 'Situação']
 
   return (
-    <Layout titulo="Meus Boletos" subtitulo="Histórico de Pagamentos">
+    <>
+    <Topbar titulo="Meus Boletos  " />
+    <div className="content-area">
       <Tabela colunas={colunas} dados={boletos} />
-    </Layout>
+    </div>
+    </>
   )
 }
 
